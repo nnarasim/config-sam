@@ -1,0 +1,20 @@
+---
+spring:
+  application:
+    name: gateway
+
+server:
+  port: 8080
+
+zuul:
+  routes:
+    helloworld:
+      path: /helloworld/**
+      serviceId: helloworld
+    discovery:
+      path: /discovery/**
+      serviceId: EUREKA-SERVER-CLUSTERED  
+    dashboard:
+      path: /dashboard/**
+      serviceId: dashboard        
+
